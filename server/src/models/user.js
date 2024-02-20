@@ -21,6 +21,10 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },
+    todo:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Todo",
+    },
     createdAt: {
         type: Date,
         default: Date.now // Corrected syntax here

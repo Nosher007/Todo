@@ -17,7 +17,7 @@ const Login = async (req, res) => {
 
         const verified = bcrypt.compareSync(password, user.password);
         if (!verified) {
-            return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTRY, "Username or password incorrect"));
+            return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERy, "Username or password incorrect"));
         }
 
         const token = Jwt.sign({ userId: user._id }, JWT_TOKEN_SECRET);
