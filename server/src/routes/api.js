@@ -7,7 +7,7 @@ import { createTodo } from '../controllers/Todo.controller.js';
 import { check } from 'express-validator';
 import { GetTodos } from '../controllers/TodoList.controller.js';
 import { MarkTodo } from '../controllers/MarkTodo.controller.js';
-import { RemoveTodo } from '../controllers/RemoveTodoController.js';
+import {RemoveTodo} from '../controllers/RemoveTodoController.js';
 const apiRouts = express.Router();
 export const apiProtected = express.Router();
 
@@ -23,7 +23,6 @@ apiProtected.post("/createTodo",[check("desc","Todo desc is required").exists()]
 
 
 apiProtected.post("/markedTodo",[check("todo_id","Todo desc is required").exists()],MarkTodo);
-
 
 apiProtected.post("/deleteTodo",[check("todo_id","Todo desc is required").exists()],RemoveTodo);
 
