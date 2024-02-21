@@ -1,5 +1,5 @@
-import React from "react";
 
+import { Link } from "react-router-dom"
 export default function Header(){
     return(
         <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -11,18 +11,18 @@ export default function Header(){
     <div className="collapse navbar-collapse" id="navbarColor02">
       <ul className="navbar-nav me-auto">
         <li className="nav-item">
-          <a className="nav-link active" href="#">Home
+          <Link className="nav-link active" to="/">Home
             <span className="visually-hidden">(current)</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
+          <Link className="nav-link" to="/login">Login</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
+          <Link className="nav-link" href="/register">Register</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">About</a>
+          <a className="nav-link" href="#">LogOut</a>
         </li>
        
       </ul>
