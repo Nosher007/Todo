@@ -1,7 +1,7 @@
 import { validationResult } from "express-validator";
 import { jsonGenerate } from "../utils/helper.js";
 import { statusCode } from "../utils/constant.js";
-import Todo from "../models/todo.js"; // Import the Todo model
+import Todo from "../models/Todo.js"; // Import the Todo model
 import User from "../models/user.js";
 
 export const createTodo = async (req, res) => {
@@ -28,6 +28,6 @@ export const createTodo = async (req, res) => {
         }
     } catch (error) {
         console.error("Error creating todo:", error);
-        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTRY, "Something went wrong", error));
+        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERy, "Something went wrong", error));
     }
 };
