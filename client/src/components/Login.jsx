@@ -3,6 +3,7 @@ import { login } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from './partials/Header.jsx';
 
 function Login() {
     const [form, setForm] = useState({
@@ -42,7 +43,9 @@ function Login() {
     };
 
     return (
-        <div className="container">
+        <>
+        <Header/>
+       <div className="container">
             <div className="row justify-content-center mt-5">
                 <div className="col-md-6">
                     <div className="card">
@@ -69,6 +72,7 @@ function Login() {
             </div>
             <ToastContainer />
         </div>
+        </>
     );
 }
 

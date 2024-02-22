@@ -2,6 +2,7 @@ import { useState } from "react"
 import { register } from "../services/api"
 import { ToastContainer, toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
+import Header from "./partials/Header.jsx";
 
 export default function Register(){
 const navigation=useNavigate();
@@ -64,6 +65,7 @@ const navigation=useNavigate();
       };
       
 return <>
+    <Header />
     <div className="container">
         <ToastContainer/>
         <div className="row justify-content-md-center mt-4">
