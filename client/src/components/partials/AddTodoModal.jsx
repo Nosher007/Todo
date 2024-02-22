@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { createTodoApi } from "../../services/api";
-export default function AddTodoModal(){
+export default function AddTodoModal({setRefreshList}){
 
     const [todoDesc,setTodoDesc]=useState('');
 
@@ -17,7 +15,9 @@ export default function AddTodoModal(){
         
 
         if(result.status===200){
-            toast('Todo Added')
+      
+            setRefreshList(new Date())
+            setTodoDesc('')
         }
         else{
             toast(result.message);
@@ -26,7 +26,6 @@ export default function AddTodoModal(){
 
     return(
         <div className="modal mt-5" id="exampleModal">
-            <ToastContainer/>
         <div className="modal-dialog" role="document">
             <div className="modal-content">
                 <div className="modal-header">
@@ -46,7 +45,7 @@ export default function AddTodoModal(){
                 </div>
             <div className="modal-footer">
                 <button className="btn btn-secondary" onClick={()=>{setTodoDesc('')}} data-bs-dismiss="modal">Close</button>
-                <button className="btn btn-secondary " onClick={handleTodoSubmit}> Save Todo</button>
+                <button className="btn btn-secondary " onClick={handleTodoSubmit} data-bs-dismiss="modal"> Save Todo</button>
             </div>
             </div>
         </div>
