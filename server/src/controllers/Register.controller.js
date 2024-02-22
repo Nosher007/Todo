@@ -15,7 +15,7 @@ const Register = async (req, res) => {
         const userExist = await User.findOne({$or:[{ email }, { username }]});
 
         if (userExist) {
-            return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTRY, 'User or Email already exists'));
+            return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERY, 'User or Email already exists'));
         }
 
         try {

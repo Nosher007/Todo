@@ -32,7 +32,8 @@ function Login() {
         setErrors({});
 
         if (result.status === 200) {
-            localStorage.setItem('user', JSON.stringify(result.data.data));
+            const { token, userId } = result.data; // Extract token and userId from result
+            localStorage.setItem('user', JSON.stringify({ token, userId })); // Save token and userId in localStorage
             navigate('/');
         } else if (result.status === 201) {
             setErrors(result.data.data);

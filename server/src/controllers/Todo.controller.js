@@ -28,6 +28,6 @@ export const createTodo = async (req, res) => {
         }
     } catch (error) {
         console.error("Error creating todo:", error);
-        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERy, "Something went wrong", error));
+        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERY, "Something went wrong", error));
     }
 };

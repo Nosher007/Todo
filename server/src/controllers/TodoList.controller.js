@@ -12,7 +12,7 @@ export const GetTodos=async(req,res)=>{
         return res.json(jsonGenerate(statusCode.SUCCESS,"All todo list",list))
     } catch (error){
         return res.json(
-            jsonGenerate(statusCode.UNPROCESSABLE_ENTERy,"Error",error)
+            jsonGenerate(statusCode.UNPROCESSABLE_ENTERY,"Error",error)
         )
     }
 }

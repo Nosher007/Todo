@@ -14,7 +14,7 @@ const AuthMiddleware = (req, res, next) => {
         req.userId = decoded.userId;
         return next();
     } catch (error) {
-        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTRY, "Invalid Token"));
+        return res.json(jsonGenerate(statusCode.UNPROCESSABLE_ENTERY, "Invalid Token"));
     }
 };
 
