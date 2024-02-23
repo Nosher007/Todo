@@ -44,7 +44,7 @@ export default function Home() {
       <div className="container">
         <ToastContainer/>
         <div className="row justify-content-md-center mt-4">
-         {list.map((todos)=><Todo todo={todos} key={todos._id}/>)}
+         {list.map((todos)=><Todo todo={todos} key={todos._id} setRefreshList={setRefreshList}/>)}
         </div>
       </div>
 
@@ -62,6 +62,7 @@ export default function Home() {
         </button>
       </div>
       <AddTodoModal setRefreshList={setRefreshList}/>
+      
     </>
   );
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CREATETODO, LOGIN, REGISTER, TODO_LIST } from './apiConnection';
+import { CREATETODO, LOGIN, MARK_COMPLETE, REGISTER, TODO_DELETE, TODO_LIST } from './apiConnection';
 
 export const login = async (data) => {
   try {
@@ -50,6 +50,38 @@ export const getTodosApi = async () => {
     throw new Error('Failed to fetch todos'); // Throw an error if fetching todos fails
   }
 };
+
+
+
+export const deleteTodo = async (data) => {
+  let token = getToken(); // Assuming you have a function getToken() that retrieves the token
+  try {
+    const response = await axios.post(TODO_DELETE, data, {
+      headers: {
+        auth: token
+      }
+    });
+    return response.data; // Return the response data on success
+  } catch (error) {
+    throw new Error('Create Todo Failed'); // Throw an error if creating todo fails
+  }
+};
+
+
+export const markedTodo = async (data) => {
+  let token = getToken(); // Assuming you have a function getToken() that retrieves the token
+  try {
+    const response = await axios.post(MARK_COMPLETE, data, {
+      headers: {
+        auth: token
+      }
+    });
+    return response.data; // Return the response data on success
+  } catch (error) {
+    throw new Error('Create Todo Failed'); // Throw an error if creating todo fails
+  }
+};
+
 
 
 
